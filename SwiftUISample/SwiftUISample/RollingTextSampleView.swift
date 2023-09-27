@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct RollingTextSampleView: View {
-    @State var value = 111
+    @State var value = "111.1M"
     
     var body: some View {
         VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             RollingText(newScore: $value)
             
             Button("value changed") {
-                value = .random(in: 0...9000)
+                value = String(Int.random(in: 0...9000))
             }
         }
     }
