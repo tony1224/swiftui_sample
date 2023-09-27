@@ -19,6 +19,15 @@ struct ContentView: View {
             }
             .navigationTitle("TopView")
             .navigationBarTitleDisplayMode(.inline)
+
+            NavigationLink {
+                RollingTextSampleView()
+            } label: {
+                Label("Rolling", systemImage: "pencil")
+                    .font(.title)
+            }
+            .navigationTitle("Rolling")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
