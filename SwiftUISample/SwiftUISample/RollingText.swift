@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct RollingText: View {
-//    @Binding var newScore: Int
     @Binding var newScore: String
-//    @State var animationRange: [Int] = []
-    @State var scores: [String] = ["0"]
+    @State var scores: [String] = []
 
     var body: some View {
-        Text("88888888")
+        Text("888888888")
             .font(.largeTitle)
             .fontWeight(.regular)
             .opacity(0)
@@ -24,7 +22,8 @@ struct RollingText: View {
                     VStack(spacing: 0) {
                         ForEach(scores, id: \.self) { currentScore in
                             let _ = print("number is \(currentScore)")
-                            Text("\(currentScore)")
+                            let _ = print("height is \(size.height)")
+                            Text(currentScore)
                                 .font(.largeTitle)
                                 .fontWeight(.regular)
                                 .frame(width: size.width, height: size.height, alignment: .center)
@@ -35,6 +34,7 @@ struct RollingText: View {
                 .clipped()
             }
             .onAppear {
+                scores.append("000")
                 let _ = print("first range is \(scores)")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.06) {
                     updateText()
@@ -47,7 +47,7 @@ struct RollingText: View {
                 }
                 updateText()
             }
-        
+
 //        HStack(spacing: 0) {
 //            ForEach(0..<animationRange.count, id: \.self) { index in
 //                let _ = print("index is \(index)")
