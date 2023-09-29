@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ShareNotificationView: View {
-    @State var score = "44.4M"
-    
+    @State var hoge: Hoge = Hoge(score: "44.4M", updated: false)
+
     var body: some View {
         VStack(spacing: 16) {
-            BounceAnimationView(text: $score, height: 24)
+            BounceAnimationView(hoge: $hoge, height: 24, defatultValue: hoge.score)
                 .frame(width: 100, height: 24)
             Button("add item") {
-                score = String(Int.random(in: 100...200))
+                hoge = Hoge(score: String(Int.random(in: 100...200)), updated: true)
             }
             HStack(spacing: 16) {
                 Image(uiImage: UIImage(named: "mockImage")!)

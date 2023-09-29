@@ -14,10 +14,57 @@
             filePath = "SwiftUISample/BounceAnimationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "previews"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - e7f877ae3f8f2f86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SwiftUISample.BounceAnimationView_Previews.previews.getter : some"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - d3b0c6d409fced1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUISample.BounceAnimationView, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in static SwiftUISample.BounceAnimationView_Previews.previews.getter : some"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - 7aaca8b864e119e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUISample.BounceAnimationView, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in static SwiftUISample.BounceAnimationView_Previews.previews.getter : some"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
