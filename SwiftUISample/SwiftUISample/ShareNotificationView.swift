@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ShareNotificationView: View {
+    @State var score = "44.4M"
+    
     var body: some View {
-        VStack {
-            BounceAnimationView(text: "945", startTime: 0.0, textHeight: 24)
+        VStack(spacing: 16) {
+            BounceAnimationView(text: $score, height: 24)
                 .frame(width: 100, height: 24)
+            Button("add item") {
+                score = String(Int.random(in: 100...200))
+            }
             HStack(spacing: 16) {
                 Image(uiImage: UIImage(named: "mockImage")!)
                     .resizable()

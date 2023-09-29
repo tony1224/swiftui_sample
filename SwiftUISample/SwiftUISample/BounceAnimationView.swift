@@ -8,32 +8,55 @@
 import SwiftUI
 
 struct BounceAnimationView: View {
-    let characters: Array<String.Element>
-    
-    @State var offsetYForBounce: CGFloat
-    @State var opacity: CGFloat = 0
-    @State var baseTime: Double
-    
-    init(text: String, startTime: Double, textHeight: CGFloat) {
-        self.characters = Array(text)
-        self.baseTime = startTime
-        self.offsetYForBounce = textHeight
+    @Binding var newScore: String
+    @State var offsetYBounce: CGFloat
+    @State var opacity: CGFloat = 1
+    private let defaultYBounce: CGFloat
+
+    init(text: Binding<String>, height: CGFloat) {
+        _newScore = text
+        offsetYBounce = height
+        defaultYBounce = height
     }
     
     var body: some View {
-        HStack(spacing:0){
-            ForEach(0..<characters.count) { num in
-                Text(String(self.characters[num]))
-                    .font(.custom("HiraMinProN-W3", fixedSize: 24))
-                    .offset(x: 0, y: offsetYForBounce)
-                    .opacity(opacity)
-                    .animation(.spring(response: 0.2, dampingFraction: 0.9, blendDuration: 0.05).delay( Double(num) * 0.05 ), value: offsetYForBounce)
-            }
+        Text(newScore)
+            .font(.largeTitle)
+            .fontWeight(.regular)
+            .offset(x: 0, y: offsetYBounce)
+            .opacity(opacity)
+            .animation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 1), value: offsetYBounce)
             .onAppear{
-                DispatchQueue.main.asyncAfter(deadline: .now() + (0.8 + baseTime)) {
-                    opacity = 1
-                    offsetYForBounce = 0
-                }
+                updateText()
+            }
+            .onChange(of: newScore) { score in
+                updateText()
+            }
+    }
+
+    private func updateText() {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            offsetYBounce = -defaultYBounce
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            offsetYBounce = defaultYBounce*2
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            opacity = 1
+            offsetYBounce = 0
+        }
+    }
+}
+
+
+struct BounceAnimationView_Previews: PreviewProvider {
+    @State static var score: String = "44.4M"
+    
+    static var previews: some View {
+        VStack {
+            BounceAnimationView(text: $score, height: 24)
+            Button("add item") {
+                score = String(Int.random(in: 100...200))
             }
         }
     }
