@@ -13,6 +13,9 @@ struct MarqueeText: View {
     @State var text: String
     // TextSizeを取得するために xx のため UIFontにする
     var font: UIFont
+    var animationSpeed: Double = 0.02
+    var delayTime: Double = 0.5
+    // 両端のgradientは特に設定不要
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -26,6 +29,7 @@ struct MarqueeText: View {
 
             // もらったテキストを少し感覚を空けて追加
             // 最初のtext表示が終わった時にoffsetをzeroに設定
+            // TODO: ここが文字次第では調整必要
             (1...15).forEach { _ in
                 text.append(" ")
             }
@@ -35,14 +39,23 @@ struct MarqueeText: View {
 
             // 文字幅に基づいて合計秒数を計算すると
             // 各文字のアニメーション速度は0.02秒になるようにする
-            let timing: Double = (0.02 * storedSize.width)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            let timing: Double = (animationSpeed * storedSize.width)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation(.linear(duration: timing)) {
                     offset = -storedSize.width
                 }
             }
         }
-    } 
+        // タイマーを使ってアニメーションのタイミングごとにoffsetをzeroにリセット
+        // delayはeveryに対し+何秒かで指定
+        .onReceive(Timer.publish(every: ((animationSpeed * storedSize.width) + delayTime), on: .main, in: .default), perform: { _ in
+            offset = 0
+            withAnimation(.linear(duration: (animationSpeed * storedSize.width))) {
+                offset = -storedSize.width
+            }
+        })
+        
+    }
     
     func textSize() -> CGSize {
         let attributes = [NSAttributedString.Key.font: font]
