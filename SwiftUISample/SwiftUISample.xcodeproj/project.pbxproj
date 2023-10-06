@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232552ACFB2AA00B2E012 /* RollingText.swift */; };
+		FB3232582ACFB50200B2E012 /* MarqueeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232572ACFB50200B2E012 /* MarqueeText.swift */; };
 		FB3BDC2C2AC2CD5700CAF1B5 /* RollingTextSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3BDC2B2AC2CD5700CAF1B5 /* RollingTextSampleView.swift */; };
 		FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0F96729E593810006390C /* ShareNotificationView.swift */; };
 		FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		FB3232552ACFB2AA00B2E012 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
+		FB3232572ACFB50200B2E012 /* MarqueeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeText.swift; sourceTree = "<group>"; };
 		FB3BDC2B2AC2CD5700CAF1B5 /* RollingTextSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingTextSampleView.swift; sourceTree = "<group>"; };
 		FBA0F96729E593810006390C /* ShareNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareNotificationView.swift; sourceTree = "<group>"; };
 		FBAB320C292C6A83001C050A /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				FBB406D62A9FA2A30009F4AA /* BounceAnimationView.swift */,
 				FB3BDC2B2AC2CD5700CAF1B5 /* RollingTextSampleView.swift */,
 				FB3232552ACFB2AA00B2E012 /* RollingText.swift */,
+				FB3232572ACFB50200B2E012 /* MarqueeText.swift */,
 			);
 			path = SwiftUISample;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */,
 				FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */,
 				FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */,
+				FB3232582ACFB50200B2E012 /* MarqueeText.swift in Sources */,
 				FBB406D72A9FA2A30009F4AA /* BounceAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

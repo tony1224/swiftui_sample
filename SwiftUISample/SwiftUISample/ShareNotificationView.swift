@@ -16,6 +16,9 @@ struct ShareNotificationView: View {
                 let _ = print("hoge")
             })
             .frame(height: 24)
+
+            MarqueeText(text:"Tech, video games, failed cooking attempts, vlogs and more!", font: .systemFont(ofSize: 16))
+            
             HStack(spacing: 16) {
                 Image(uiImage: UIImage(named: "mockImage")!)
                     .resizable()
@@ -50,6 +53,7 @@ struct ShareNotificationView: View {
             .cornerRadius(8)
             .padding()
         }
+        .padding()
     }
 }
 
