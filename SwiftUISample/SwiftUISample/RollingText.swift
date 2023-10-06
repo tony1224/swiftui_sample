@@ -2,108 +2,50 @@
 //  RollingText.swift
 //  SwiftUISample
 //
-//  Created by Jun Morita on 2023/09/26.
+//  Created by Jun Morita on 2023/10/06.
 //
 
 import SwiftUI
 
-struct RollingText: View {
-    @Binding var newScore: String
-    @State var scores: [String] = []
+public struct RollingText: View {
+    @State private var offsetY: CGFloat
+    private let texts: [String]
+    private let textHeight: CGFloat
+    private let minWidth: CGFloat
+    private let textColor: Color
+    private let onAppeared: () -> Void
 
-    var body: some View {
-        Text("888888888")
-            .font(.largeTitle)
-            .fontWeight(.regular)
-            .opacity(0)
-            .overlay {
-                GeometryReader { proxy in
-                    let size = proxy.size
-                    VStack(spacing: 0) {
-                        ForEach(scores, id: \.self) { currentScore in
-                            let _ = print("number is \(currentScore)")
-                            let _ = print("height is \(size.height)")
-                            Text(currentScore)
-                                .font(.largeTitle)
-                                .fontWeight(.regular)
-                                .frame(width: size.width, height: size.height, alignment: .center)
-                        }
-                    }
-                    .offset(y: -size.height)
-                }
-                .clipped()
-            }
-            .onAppear {
-                scores.append("000")
-                let _ = print("first range is \(scores)")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.06) {
-                    updateText()
-                }
-            }
-            .onChange(of: newScore) { newValue in
-                if scores.count > 1 {
-                    scores.removeFirst()
-                    print("remove last element")
-                }
-                updateText()
-            }
-
-//        HStack(spacing: 0) {
-//            ForEach(0..<animationRange.count, id: \.self) { index in
-//                let _ = print("index is \(index)")
-//                Text("8")
-//                    .font(.largeTitle)
-//                    .fontWeight(.regular)
-//                    .opacity(0)
-//                    .overlay {
-//                        GeometryReader { proxy in
-//                            let size = proxy.size
-//                            VStack(spacing: 0) {
-//                                ForEach(0...9, id: \.self) { number in
-//                                    let _ = print("number is \(number)")
-//                                    let _ = print("height is \(size.height)")
-//                                    Text("\(number)")
-//                                        .font(.largeTitle)
-//                                        .fontWeight(.regular)
-//                                        .frame(width: size.width, height: size.height, alignment: .center)
-//                                }
-//                            }
-//                            .offset(y: -CGFloat(animationRange[index]) * size.height)
-//                        }
-//                        .clipped()
-//                    }
-//            }
-//        }
-//        .onAppear {
-//            animationRange = Array(repeating: 0, count: "\(newScore)".count)
-//            let _ = print("first range is \(animationRange)")
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.06) {
-//                updateText()
-//            }
-//        }
-
+    public init(currentText: String, nextText: String, textHeight: CGFloat, minWidth: CGFloat, textColor: Color, onAppeared: @escaping () -> Void) {
+        offsetY = textHeight / 2
+        texts = [currentText, nextText]
+        self.textHeight = textHeight
+        self.minWidth = minWidth
+        self.textColor = textColor
+        self.onAppeared = onAppeared
     }
-    
-    func updateText() {
-        withAnimation(.interactiveSpring(response: 0.8, dampingFraction: 1, blendDuration: 1)) {
-            scores.append(newScore)
-//            let _ = print("update range is \(scores)")
+
+    public var body: some View {
+        VStack(spacing: 8) {
+            ForEach(texts, id: \.self) { text in
+                Text(text)
+                    .foregroundStyle(textColor)
+                    .frame(minWidth: minWidth, alignment: .trailing)
+                    .animation(.spring(response: 0.95, dampingFraction: 1, blendDuration: 0.95), value: offsetY)
+            }
+            .offset(y: offsetY)
         }
-        
-//        let stringValue = String(newScore)
-//        print(stringValue)
-        
-//        for (index, newScore) in zip(0..<stringValue.count, stringValue) {
-//            let _ = print("for in index: \(index), newScore is \(newScore)")
-//            withAnimation(.interactiveSpring(response: 0.8, dampingFraction: 1, blendDuration: 1)) {
-//                animationRange[index] = (String(newScore) as NSString).integerValue
-//                let _ = print("update range is \(animationRange)")
-//            }
-//        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                offsetY = -(textHeight / 2)
+            }
+            onAppeared()
+        }
+        .clipped()
     }
-
 }
 
-#Preview {
-    RollingTextSampleView()
+public struct RollingText_Previews: PreviewProvider {
+    static public var previews: some View {
+        RollingText(currentText: "990", nextText: "9,999", textHeight: 24, minWidth: 30, textColor: Color(.red), onAppeared: {}).background(Color(.black))
+    }
 }

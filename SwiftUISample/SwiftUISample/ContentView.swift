@@ -21,7 +21,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
 
             NavigationLink {
-                RollingTextSampleView()
+//                RollingTextSampleView()
             } label: {
                 Label("Rolling", systemImage: "pencil")
                     .font(.title)

@@ -7,76 +7,70 @@
 
 import SwiftUI
 
-struct BounceAnimationView: View {
-    @State var offsetYBounce: CGFloat
+struct OldRollingText: View {
+    @Binding var entity: RollingTextEntity
+    @State var offsetY: CGFloat
     @State var opacity: CGFloat = 1
-    private let defaultYBounce: CGFloat
-
-    // onChangeでtextとupdatedを渡したい。Equatableである必要があるのでTupleは不可
-    // Stateだと反応しない？さっき反応してたような気がするけど🧐
-    // Bindingでinitializerに渡す必要
-    // だたそうするとscoreに初期値を渡せない🧐
-    @Binding var hoge: Hoge
-    
     @State var score: String
+    private let textHeight: CGFloat
 
-    init(hoge: Binding<Hoge>, height: CGFloat, defatultValue: String? = nil) {
-        _hoge = hoge
-        if let value = defatultValue {
-            score = value
+    init(entity: Binding<RollingTextEntity>, textHeight: CGFloat, initialScore: String? = nil) {
+        _entity = entity
+        if let score = initialScore {
+            self.score = score
         } else {
             score = ""
         }
-        offsetYBounce = height
-        defaultYBounce = height
+        offsetY = textHeight
+        self.textHeight = textHeight
     }
     
     var body: some View {
         Text(score)
             .font(.largeTitle)
             .fontWeight(.regular)
-            .offset(x: 0, y: offsetYBounce)
+            .offset(x: 0, y: offsetY)
             .opacity(opacity)
-            .animation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 1), value: offsetYBounce)
+            .animation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 1), value: offsetY)
             .onAppear{
-                updateText(hoge: nil)
+                updateText()
             }
-            .onChange(of: hoge) { hoge in
-                updateText(hoge: hoge)
+            .onChange(of: entity) { entity in
+                updateText(entity: entity)
             }
     }
 
-    private func updateText(hoge: Hoge? = nil) {
+    private func updateText(entity: RollingTextEntity? = nil) {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             opacity = 0
-            offsetYBounce = -defaultYBounce
+            offsetY = -textHeight
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            offsetYBounce = defaultYBounce*2
-            if let hoge = hoge, hoge.updated {
-                score = hoge.score
+            offsetY = textHeight*2
+            if let entity = entity, entity.updated {
+                score = entity.score
             }
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             opacity = 1
-            offsetYBounce = 0
+            offsetY = 0
         }
     }
 }
 
-struct Hoge: Equatable {
+struct RollingTextEntity: Equatable {
     let score: String
     let updated: Bool
 }
 
 struct BounceAnimationView_Previews: PreviewProvider {
-    @State static var hoge: Hoge = Hoge(score: "44.4M", updated: false)
+    @State static var entity: RollingTextEntity = RollingTextEntity(score: "44.4M", updated: false)
     
     static var previews: some View {
         VStack {
-            BounceAnimationView(hoge: $hoge, height: 24, defatultValue: hoge.score)
+            OldRollingText(entity: $entity, textHeight: 24, initialScore: entity.score)
             Button("add item") {
-                hoge = Hoge(score: String(Int.random(in: 100...200)), updated: true)
+                entity = RollingTextEntity(score: String(Int.random(in: 100...200)), updated: true)
             }
         }
     }

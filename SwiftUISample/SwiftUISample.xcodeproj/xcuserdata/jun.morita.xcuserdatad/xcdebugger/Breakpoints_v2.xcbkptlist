@@ -14,43 +14,118 @@
             filePath = "SwiftUISample/BounceAnimationView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "previews"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "95772107-5696-4255-9F19-80400120E379 - e7f877ae3f8f2f86"
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - 7142b6e5874126ea"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static SwiftUISample.BounceAnimationView_Previews.previews.getter : some"
+                  symbolName = "static SwiftUISample.BounceAnimationView_Previews.hoge.getter : SwiftUISample.Hoge"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - 9551ef19c959d154"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftUISample.BounceAnimationView_Previews._hoge.unsafeMutableAddressor : SwiftUI.State&lt;SwiftUISample.Hoge&gt;"
                   moduleName = "SwiftUISample"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  uuid = "95772107-5696-4255-9F19-80400120E379 - d3b0c6d409fced1"
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - 2b39f2406c01782"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUISample.BounceAnimationView, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in static SwiftUISample.BounceAnimationView_Previews.previews.getter : some"
+                  symbolName = "static SwiftUISample.BounceAnimationView_Previews.hoge.setter : SwiftUISample.Hoge"
                   moduleName = "SwiftUISample"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "168">
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "0">
                </Location>
                <Location
-                  uuid = "95772107-5696-4255-9F19-80400120E379 - 7aaca8b864e119e"
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - d43e28d05e65e1f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SwiftUISample.BounceAnimationView_Previews.hoge.modify : SwiftUISample.Hoge"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - e173ab34fd294c0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SwiftUISample.BounceAnimationView_Previews.hoge.modify : SwiftUISample.Hoge with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - 31913788fcbe2993"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for _hoge"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - 6084daf5a6e9fff1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SwiftUISample.BounceAnimationView_Previews.$hoge.getter : SwiftUI.Binding&lt;SwiftUISample.Hoge&gt;"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - 7aaca8b864e2ed4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -60,8 +135,23 @@
                   urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "95772107-5696-4255-9F19-80400120E379 - c5e445a6f276e2b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUISample.RollingText, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in static SwiftUISample.BounceAnimationView_Previews.previews.getter : some"
+                  moduleName = "SwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jun.morita/Desktop/swiftui_practice/swiftui_practice/SwiftUISample/SwiftUISample/BounceAnimationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
                   offsetFromSymbolStart = "72">
                </Location>
             </Locations>
