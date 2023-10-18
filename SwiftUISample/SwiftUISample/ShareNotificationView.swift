@@ -9,15 +9,24 @@ import SwiftUI
 
 struct ShareNotificationView: View {
     @State var entity: RollingTextEntity = RollingTextEntity(score: "44.4M", updated: false)
+    @State private var opacity: CGFloat = .zero
 
     var body: some View {
         VStack(spacing: 16) {
-            RollingText(currentText: "0", nextText: "100", textHeight: 24, minWidth: 30, textColor: .blue, onAppeared: {
-                let _ = print("hoge")
-            })
-            .frame(height: 24)
+//            RollingText(currentText: "0", nextText: "100", textHeight: 24, minWidth: 30, textColor: .blue, onAppeared: {
+//                let _ = print("hoge")
+//            })
+//            .frame(height: 24)
 
-            MarqueeText(text:"Tech, video games, failed cooking attempts, vlogs and more!", font: .systemFont(ofSize: 16))
+            MarqueeText(text:"Attribute!", font: .systemFont(ofSize: 16))
+                .opacity(opacity)
+                .onAppear {
+                    self.opacity = 1.0
+                }
+                .onDisappear {
+                    self.opacity = 0.0
+                }
+                .background(Color.blue)
             
             HStack(spacing: 16) {
                 Image(uiImage: UIImage(named: "mockImage")!)

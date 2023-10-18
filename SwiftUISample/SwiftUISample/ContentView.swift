@@ -21,12 +21,12 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
 
             NavigationLink {
-//                RollingTextSampleView()
+                FirstList()
             } label: {
-                Label("Rolling", systemImage: "pencil")
+                Label("First List", systemImage: "pencil")
                     .font(.title)
             }
-            .navigationTitle("Rolling")
+            .navigationTitle("First List")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
