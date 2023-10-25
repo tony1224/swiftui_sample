@@ -1,8 +1,8 @@
 //
 //  RollingText.swift
-//  SwiftUISample
+//  RealityUIComponents
 //
-//  Created by Jun Morita on 2023/10/06.
+//  Created by Jun Morita on 2023/09/29.
 //
 
 import SwiftUI
@@ -12,15 +12,27 @@ public struct RollingText: View {
     private let texts: [String]
     private let textHeight: CGFloat
     private let minWidth: CGFloat
+    private let font: UIFont
     private let textColor: Color
-    private let onAppeared: () -> Void
+    private let startDelay: CGFloat
+    private let onAppeared: (() -> Void)?
 
-    public init(currentText: String, nextText: String, textHeight: CGFloat, minWidth: CGFloat, textColor: Color, onAppeared: @escaping () -> Void) {
-        offsetY = textHeight / 2
+    public init(
+        currentText: String,
+        nextText: String,
+        textHeight: CGFloat,
+        minWidth: CGFloat,
+        font: UIFont,
+        textColor: Color = .black,
+        startDelay: CGFloat = 1.0,
+        onAppeared: (() -> Void)? = nil) {
+        offsetY = textHeight
         texts = [currentText, nextText]
         self.textHeight = textHeight
         self.minWidth = minWidth
+        self.font = font
         self.textColor = textColor
+        self.startDelay = startDelay
         self.onAppeared = onAppeared
     }
 
@@ -28,6 +40,7 @@ public struct RollingText: View {
         VStack(spacing: 8) {
             ForEach(texts, id: \.self) { text in
                 Text(text)
+                    .font(.init(font))
                     .foregroundStyle(textColor)
                     .frame(minWidth: minWidth, alignment: .trailing)
                     .animation(.spring(response: 0.95, dampingFraction: 1, blendDuration: 0.95), value: offsetY)
@@ -35,17 +48,15 @@ public struct RollingText: View {
             .offset(y: offsetY)
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                offsetY = -(textHeight / 2)
+            DispatchQueue.main.asyncAfter(deadline: .now() + startDelay) {
+                offsetY = -textHeight
             }
-            onAppeared()
+            onAppeared?()
         }
         .clipped()
     }
 }
 
-public struct RollingText_Previews: PreviewProvider {
-    static public var previews: some View {
-        RollingText(currentText: "990", nextText: "9,999", textHeight: 24, minWidth: 30, textColor: Color(.red), onAppeared: {}).background(Color(.black))
-    }
+#Preview {
+    RollingText(currentText: "100", nextText: "1000", textHeight: 24, minWidth: 30, font: .systemFont(ofSize: 20))
 }

@@ -11,23 +11,41 @@ import UIKit
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            NavigationLink {
-                ShareNotificationView()
-            } label: {
-                Label("Go ShareView", systemImage: "figure.walk")
-                    .font(.title)
+            List {
+                shareNotificationLink
+                rollingTextLink
+                marqueeTextLink
             }
-            .navigationTitle("TopView")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("SwiftUI Sample")
+            .navigationBarTitleDisplayMode(.large)
+        }
+   }
 
-            NavigationLink {
-                FirstList()
-            } label: {
-                Label("First List", systemImage: "pencil")
-                    .font(.title)
-            }
-            .navigationTitle("First List")
-            .navigationBarTitleDisplayMode(.inline)
+    private var shareNotificationLink: some View {
+        NavigationLink {
+            ShareNotificationView()
+        } label: {
+            Text("Share Notification")
         }
     }
+
+    private var rollingTextLink: some View {
+        NavigationLink {
+            RollingText(currentText: "100", nextText: "1000", textHeight: 24, minWidth: 30, font: .systemFont(ofSize: 16))
+        } label: {
+            Text("RollingText")
+        }
+    }
+
+    private var marqueeTextLink: some View {
+        NavigationLink {
+            MarqueeText(text: "scrolling animation.", font: .systemFont(ofSize: 16))
+        } label: {
+            Text("MarqueeText")
+        }
+    }
+}
+
+#Preview {
+    ContentView()
 }

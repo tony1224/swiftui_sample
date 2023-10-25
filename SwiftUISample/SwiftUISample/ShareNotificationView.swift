@@ -17,17 +17,7 @@ struct ShareNotificationView: View {
 //                let _ = print("hoge")
 //            })
 //            .frame(height: 24)
-
-            MarqueeText(text:"Attribute!", font: .systemFont(ofSize: 16))
-                .opacity(opacity)
-                .onAppear {
-                    self.opacity = 1.0
-                }
-                .onDisappear {
-                    self.opacity = 0.0
-                }
-                .background(Color.blue)
-            
+           
             HStack(spacing: 16) {
                 Image(uiImage: UIImage(named: "mockImage")!)
                     .resizable()
