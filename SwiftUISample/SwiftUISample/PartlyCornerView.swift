@@ -12,7 +12,7 @@ struct PartlyCornerView: View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .frame(width: 200, height: 100)
             .background(Color.red)
-            .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner])
+            .clipRadius(6, corners: [.topLeft, .topRight])
     }
 }
 

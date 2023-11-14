@@ -8,31 +8,17 @@
 import SwiftUI
 
 extension View {
-    func cornerRadius(_ radius: CGFloat, maskedCorners: CACornerMask) -> some View {
-        self.modifier(PartlyRoundedCornerModifier(cornerRadius: radius, maskedCorners: maskedCorners))
+    func clipRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
 
-struct PartlyRoundedCornerModifier: ViewModifier {
-    let cornerRadius: CGFloat
-    let maskedCorners: CACornerMask
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
 
-    func body(content: Content) -> some View {
-        content.mask(PartlyRoundedCornerView(cornerRadius: cornerRadius, maskedCorners: maskedCorners))
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
     }
-}
-
-struct PartlyRoundedCornerView: UIViewRepresentable {
-    let cornerRadius: CGFloat
-    let maskedCorners: CACornerMask
-
-    func makeUIView(context: UIViewRepresentableContext<PartlyRoundedCornerView>) -> UIView {
-        let uiView = UIView()
-        uiView.layer.cornerRadius = cornerRadius
-        uiView.layer.maskedCorners = maskedCorners
-        uiView.backgroundColor = .white
-        return uiView
-    }
-
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PartlyRoundedCornerView>) {}
 }
