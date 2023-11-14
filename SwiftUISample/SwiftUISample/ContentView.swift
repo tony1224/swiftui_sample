@@ -15,6 +15,7 @@ struct ContentView: View {
                 shareNotificationLink
                 rollingTextLink
                 marqueeTextLink
+                partlyCornerView
             }
             .navigationTitle("SwiftUI Sample")
             .navigationBarTitleDisplayMode(.large)
@@ -42,6 +43,14 @@ struct ContentView: View {
             MarqueeText(text: "scrolling animation.", font: .systemFont(ofSize: 16))
         } label: {
             Text("MarqueeText")
+        }
+    }
+
+    private var partlyCornerView: some View {
+        NavigationLink {
+            PartlyCornerView()
+        } label: {
+            Text("PartlyCornerView")
         }
     }
 }

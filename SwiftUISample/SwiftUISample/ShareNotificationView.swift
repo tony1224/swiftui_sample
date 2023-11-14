@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShareNotificationView: View {
-    @State var entity: RollingTextEntity = RollingTextEntity(score: "44.4M", updated: false)
+//    @State var entity: RollingTextEntity = RollingTextEntity(score: "44.4M", updated: false)
     @State private var opacity: CGFloat = .zero
 
     var body: some View {
