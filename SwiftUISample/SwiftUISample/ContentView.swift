@@ -16,6 +16,7 @@ struct ContentView: View {
                 rollingTextLink
                 marqueeTextLink
                 partlyCornerView
+                tabbarView
             }
             .navigationTitle("SwiftUI Sample")
             .navigationBarTitleDisplayMode(.large)
@@ -53,6 +54,16 @@ struct ContentView: View {
             Text("PartlyCornerView")
         }
     }
+
+    private var tabbarView: some View {
+        NavigationLink {
+            SympleTabbarView()
+        } label: {
+            Text("TabbarView")
+        }
+    }
+
+    
 }
 
 #Preview {

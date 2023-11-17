@@ -11,6 +11,7 @@
 		FB1F7EE82B03C67100F4A63A /* PartlyRoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F7EE72B03C67100F4A63A /* PartlyRoundedCornerView.swift */; };
 		FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232552ACFB2AA00B2E012 /* RollingText.swift */; };
 		FB3232582ACFB50200B2E012 /* MarqueeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232572ACFB50200B2E012 /* MarqueeText.swift */; };
+		FB3BB6912B0735220062E5C2 /* SympleTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */; };
 		FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0F96729E593810006390C /* ShareNotificationView.swift */; };
 		FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */; };
 		FBAB3212292C6A83001C050A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAB3211292C6A83001C050A /* ContentView.swift */; };
@@ -24,6 +25,7 @@
 		FB1F7EE72B03C67100F4A63A /* PartlyRoundedCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartlyRoundedCornerView.swift; sourceTree = "<group>"; };
 		FB3232552ACFB2AA00B2E012 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 		FB3232572ACFB50200B2E012 /* MarqueeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeText.swift; sourceTree = "<group>"; };
+		FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SympleTabbarView.swift; sourceTree = "<group>"; };
 		FBA0F96729E593810006390C /* ShareNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareNotificationView.swift; sourceTree = "<group>"; };
 		FBAB320C292C6A83001C050A /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleApp.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				FB3232572ACFB50200B2E012 /* MarqueeText.swift */,
 				FB1F7EE52B03C62C00F4A63A /* PartlyCornerView.swift */,
 				FB1F7EE72B03C67100F4A63A /* PartlyRoundedCornerView.swift */,
+				FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */,
 			);
 			path = SwiftUISample;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				FB1F7EE82B03C67100F4A63A /* PartlyRoundedCornerView.swift in Sources */,
 				FBAB3212292C6A83001C050A /* ContentView.swift in Sources */,
+				FB3BB6912B0735220062E5C2 /* SympleTabbarView.swift in Sources */,
 				FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */,
 				FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */,
 				FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */,
