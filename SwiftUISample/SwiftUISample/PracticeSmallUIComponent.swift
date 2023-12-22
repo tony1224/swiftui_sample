@@ -1,5 +1,5 @@
 //
-//  PracticeTextView.swift
+//  PracticeSmallUIComponent.swift
 //  SwiftUISample
 //
 //  Created by Jun Morita on 2023/12/22.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct PracticeTextView: View {
+struct PracticeSmallUIComponent: View {
     @State private var text = ""
+    @State private var mockIson = true
     
     var body: some View {
         VStack {
@@ -29,11 +30,22 @@ struct PracticeTextView: View {
                 Text("\(text.count)")
                 Text("文字")
             }
+
+            // これだと真ん中にスペースができてトグルと文字を寄せれない
+//            Toggle(isOn: $mockIson) {
+//                Text("Hogehoge")
+//            }
+
+            HStack {
+                Text("Hogehoge")
+                Toggle(isOn: $mockIson) { }
+                    .labelsHidden()
+            }
         }
         .padding()
     }
 }
 
 #Preview {
-    PracticeTextView()
+    PracticeSmallUIComponent()
 }
