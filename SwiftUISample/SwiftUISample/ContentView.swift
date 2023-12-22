@@ -17,6 +17,7 @@ struct ContentView: View {
                 marqueeTextLink
                 partlyCornerView
                 tabbarView
+                textField
             }
             .navigationTitle("SwiftUI Sample")
             .navigationBarTitleDisplayMode(.large)
@@ -60,6 +61,14 @@ struct ContentView: View {
             SympleTabbarView()
         } label: {
             Text("TabbarView")
+        }
+    }
+
+    private var textField: some View {
+        NavigationLink {
+            PracticeTextView()
+        } label: {
+            Text("TextField")
         }
     }
 
