@@ -17,6 +17,7 @@ struct ContentView: View {
                 marqueeTextLink
                 partlyCornerView
                 tabbarView
+                localPushView
             }
             .navigationTitle("SwiftUI Sample")
             .navigationBarTitleDisplayMode(.large)
@@ -63,6 +64,13 @@ struct ContentView: View {
         }
     }
 
+    private var localPushView: some View {
+        NavigationLink {
+            LocalPushView()
+        } label: {
+            Text("LocalPushView")
+        }
+    }
     
 }
 
