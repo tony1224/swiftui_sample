@@ -34,6 +34,3 @@ struct SympleTabbarView: View {
     }
 }
 
-#Preview {
-    TabbarView()
-}

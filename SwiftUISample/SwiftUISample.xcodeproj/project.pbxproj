@@ -12,12 +12,14 @@
 		FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232552ACFB2AA00B2E012 /* RollingText.swift */; };
 		FB3232582ACFB50200B2E012 /* MarqueeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232572ACFB50200B2E012 /* MarqueeText.swift */; };
 		FB3BB6912B0735220062E5C2 /* SympleTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */; };
+		FB89D5392BEBBFA80058A3A7 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89D5382BEBBFA80058A3A7 /* SegmentedPicker.swift */; };
 		FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0F96729E593810006390C /* ShareNotificationView.swift */; };
 		FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */; };
 		FBAB3212292C6A83001C050A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAB3211292C6A83001C050A /* ContentView.swift */; };
 		FBAB3214292C6A84001C050A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAB3213292C6A84001C050A /* Assets.xcassets */; };
 		FBAB3218292C6A84001C050A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAB3217292C6A84001C050A /* Preview Assets.xcassets */; };
 		FBAB321F292C6BA3001C050A /* mockImage.png in Resources */ = {isa = PBXBuildFile; fileRef = FBAB321E292C6BA3001C050A /* mockImage.png */; };
+		FBB23B7C2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB23B7B2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,7 @@
 		FB3232552ACFB2AA00B2E012 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 		FB3232572ACFB50200B2E012 /* MarqueeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeText.swift; sourceTree = "<group>"; };
 		FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SympleTabbarView.swift; sourceTree = "<group>"; };
+		FB89D5382BEBBFA80058A3A7 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		FBA0F96729E593810006390C /* ShareNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareNotificationView.swift; sourceTree = "<group>"; };
 		FBAB320C292C6A83001C050A /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleApp.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		FBAB3215292C6A84001C050A /* SwiftUISample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUISample.entitlements; sourceTree = "<group>"; };
 		FBAB3217292C6A84001C050A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBAB321E292C6BA3001C050A /* mockImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mockImage.png; sourceTree = "<group>"; };
+		FBB23B7B2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		FBAB320E292C6A83001C050A /* SwiftUISample */ = {
 			isa = PBXGroup;
 			children = (
+				FBB23B7A2BEC8C0600D8B1D4 /* Util */,
 				FBAB321E292C6BA3001C050A /* mockImage.png */,
 				FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */,
 				FBAB3211292C6A83001C050A /* ContentView.swift */,
@@ -78,6 +83,7 @@
 				FB1F7EE52B03C62C00F4A63A /* PartlyCornerView.swift */,
 				FB1F7EE72B03C67100F4A63A /* PartlyRoundedCornerView.swift */,
 				FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */,
+				FBB23B7B2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift */,
 			);
 			path = SwiftUISample;
 			sourceTree = "<group>";
@@ -88,6 +94,14 @@
 				FBAB3217292C6A84001C050A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FBB23B7A2BEC8C0600D8B1D4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FB89D5382BEBBFA80058A3A7 /* SegmentedPicker.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +178,11 @@
 				FB1F7EE82B03C67100F4A63A /* PartlyRoundedCornerView.swift in Sources */,
 				FBAB3212292C6A83001C050A /* ContentView.swift in Sources */,
 				FB3BB6912B0735220062E5C2 /* SympleTabbarView.swift in Sources */,
+				FB89D5392BEBBFA80058A3A7 /* SegmentedPicker.swift in Sources */,
 				FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */,
 				FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */,
 				FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */,
+				FBB23B7C2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift in Sources */,
 				FB3232582ACFB50200B2E012 /* MarqueeText.swift in Sources */,
 				FB1F7EE62B03C62C00F4A63A /* PartlyCornerView.swift in Sources */,
 			);
@@ -305,7 +321,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -341,7 +357,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
