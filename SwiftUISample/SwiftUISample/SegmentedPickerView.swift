@@ -16,10 +16,11 @@ struct Book: Hashable, Identifiable {
 struct SegmentedPickerView: View {
     
     @State var books: [Book] = [
-        Book(title: "Atomic Habits", author: "James Clear"),
-        Book(title: "Start With Why", author: "Simon Sinek"),
-        Book(title: "Think Like A Monk", author: "Jay Shetty"),
-        Book(title: "Limitless", author: "Jim Kwik")
+        Book(title: "マンスリー", author: "James Clear"),
+        Book(title: "トップスター", author: "Simon Sinek"),
+        Book(title: "6月", author: "Jay Shetty"),
+        Book(title: "7月", author: "Jim Kwik"),
+        Book(title: "8月", author: "Jim Kwik")
     ]
     @State var selectionBook: Book?
     

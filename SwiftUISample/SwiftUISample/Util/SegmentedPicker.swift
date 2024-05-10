@@ -28,7 +28,7 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: [GridItem(.flexible())], spacing: 6) {
+                LazyHGrid(rows: [GridItem(.flexible())], spacing: 8) {
                     ForEach(items, id: \.self) { item in
                         let selected = selection == item
                         
@@ -37,24 +37,32 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
                                 Capsule()
                                     .foregroundStyle(selectionColor)
                                     .matchedGeometryEffect(id: "picker", in: pickerTransition)
+                                    .frame(height: 32)
                                 
                                 content(item).id(item)
                                     .foregroundStyle(.white)
+                                    .bold()
                                     .padding(.horizontal)
-                                    .padding(.vertical, 8)
+                                    .padding(.vertical, 12)
                                     .lineLimit(1)
                                     .clipShape(Capsule())
                                 
                             } else {
                                 Capsule()
                                     .foregroundStyle(.clear)
-                                
+                                    .frame(height: 32)
+
                                 content(item).id(item)
                                     .foregroundStyle(.black)
+                                    .bold()
                                     .padding(.horizontal)
-                                    .padding(.vertical)
+                                    .padding(.vertical, 12)
                                     .lineLimit(1)
-                                    .clipShape(Capsule())
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                            .frame(height: 32)
+                                    )
                             }
                         }
                         .onTapGesture {
@@ -63,12 +71,7 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
                             }
                         }
                         .onSegmentedChange(selection: selection, proxy: proxy)
-//                        .onChange(of: selection) { _ in // TODO: iOS17以降ではdeprecatedなので注意
-//                            withAnimation(.easeInOut(duration: 0.2)) {
-//                                proxy.scrollTo(selection)
-//                            }
-//                        }
-                    }
+                   }
                     .onAppear {
                         if selection == nil, let first = items.first {
                             selection = first
