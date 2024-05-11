@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum SegmentedType {
+    case scrollable
+    case fixed
+}
+
 struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hashable, Content: View {
     
     @Binding var selection: SelectionValue?
@@ -14,77 +19,98 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
     @Namespace private var pickerTransition
     private var selectionColor: Color = .blue
     private var content: (SelectionValue) -> Content
+    private var type: SegmentedType
     
     init(selection: Binding<SelectionValue?>,
          items: Binding<[SelectionValue]>,
          selectionColor: Color = .blue,
+         type: SegmentedType,
          @ViewBuilder content: @escaping (SelectionValue) -> Content) {
         _selection = selection
         _items = items
+        self.type = type
         self.selectionColor = selectionColor
         self.content = content
     }
     
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: [GridItem(.flexible())], spacing: 8) {
-                    ForEach(items, id: \.self) { item in
-                        let selected = selection == item
-                        
-                        ZStack {
-                            if selected {
-                                Capsule()
-                                    .foregroundStyle(selectionColor)
-                                    .matchedGeometryEffect(id: "picker", in: pickerTransition)
-                                    .frame(height: 32)
-                                
-                                content(item).id(item)
-                                    .foregroundStyle(.white)
-                                    .bold()
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 12)
-                                    .lineLimit(1)
-                                    .clipShape(Capsule())
-                                
-                            } else {
-                                Capsule()
-                                    .foregroundStyle(.clear)
-                                    .frame(height: 32)
-
-                                content(item).id(item)
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 12)
-                                    .lineLimit(1)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .stroke(Color.gray, lineWidth: 1)
-                                            .frame(height: 32)
-                                    )
-                            }
-                        }
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: 0.2)) {
-                                selection = item
-                            }
-                        }
-                        .onSegmentedChange(selection: selection, proxy: proxy)
-                   }
-                    .onAppear {
-                        if selection == nil, let first = items.first {
-                            selection = first
-                        }
-                    }
-                    
-                }
-                .padding(.horizontal)
-                .fixedSize(horizontal: false, vertical: true)
-            }
+        switch type {
+        case .scrollable:
+            scrollableButtons
+        case .fixed:
+            fixedButtons
         }
     }
     
+    private var scrollableButtons: some View {
+        ScrollViewReader { proxy in
+            ScrollView(.horizontal, showsIndicators: false) {
+                commonContents(proxy: proxy)
+            }
+        }
+    }
+
+    private var fixedButtons: some View {
+        GeometryReader { proxy in
+            Text("hoge")
+        }
+    }
+
+    private func commonContents(proxy: ScrollViewProxy) -> some View {
+        LazyHGrid(rows: [GridItem(.flexible())], spacing: 8) {
+            ForEach(items, id: \.self) { item in
+                let selected = selection == item
+                
+                ZStack {
+                    if selected {
+                        Capsule()
+                            .foregroundStyle(selectionColor)
+                            .matchedGeometryEffect(id: "picker", in: pickerTransition)
+                            .frame(height: 32)
+                        
+                        content(item).id(item)
+                            .foregroundStyle(.white)
+                            .bold()
+                            .padding(.horizontal)
+                            .padding(.vertical, 12)
+                            .lineLimit(1)
+                            .clipShape(Capsule())
+                        
+                    } else {
+                        Capsule()
+                            .foregroundStyle(.clear)
+                            .frame(height: 32)
+
+                        content(item).id(item)
+                            .foregroundStyle(.black)
+                            .bold()
+                            .padding(.horizontal)
+                            .padding(.vertical, 12)
+                            .lineLimit(1)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.gray, lineWidth: 1)
+                                    .frame(height: 32)
+                            )
+                    }
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        selection = item
+                    }
+                }
+                .onSegmentedChange(selection: selection, proxy: proxy)
+           }
+            .onAppear {
+                if selection == nil, let first = items.first {
+                    selection = first
+                }
+            }
+            
+        }
+        .padding(.horizontal)
+        .fixedSize(horizontal: false, vertical: true)
+    }
     
 }
 

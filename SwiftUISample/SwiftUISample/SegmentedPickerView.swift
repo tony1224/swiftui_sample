@@ -26,7 +26,7 @@ struct SegmentedPickerView: View {
     
     var body: some View {
         VStack {
-            SegmentedPicker(selection: $selectionBook, items: $books, selectionColor: .cyan) { book in
+            SegmentedPicker(selection: $selectionBook, items: $books, selectionColor: .cyan, type: .scrollable) { book in
                 Text(book.title)
                 // NOTE: ここで画像を差し込むことも可
             }
