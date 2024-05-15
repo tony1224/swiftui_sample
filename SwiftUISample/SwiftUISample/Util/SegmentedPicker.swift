@@ -38,78 +38,68 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
         case .scrollable:
             scrollableButtons
         case .fixed:
-            fixedButtons
+            Text("todo")
         }
     }
     
     private var scrollableButtons: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal, showsIndicators: false) {
-                commonContents(proxy: proxy)
-            }
-        }
-    }
-
-    private var fixedButtons: some View {
-        GeometryReader { proxy in
-            Text("hoge")
-        }
-    }
-
-    private func commonContents(proxy: ScrollViewProxy) -> some View {
-        LazyHGrid(rows: [GridItem(.flexible())], spacing: 8) {
-            ForEach(items, id: \.self) { item in
-                let selected = selection == item
-                
-                ZStack {
-                    if selected {
-                        Capsule()
-                            .foregroundStyle(selectionColor)
-                            .matchedGeometryEffect(id: "picker", in: pickerTransition)
-                            .frame(height: 32)
+                LazyHGrid(rows: [GridItem(.flexible())], spacing: 8) {
+                    ForEach(items, id: \.self) { item in
+                        let selected = selection == item
                         
-                        content(item).id(item)
-                            .foregroundStyle(.white)
-                            .bold()
-                            .padding(.horizontal)
-                            .padding(.vertical, 12)
-                            .lineLimit(1)
-                            .clipShape(Capsule())
-                        
-                    } else {
-                        Capsule()
-                            .foregroundStyle(.clear)
-                            .frame(height: 32)
-
-                        content(item).id(item)
-                            .foregroundStyle(.black)
-                            .bold()
-                            .padding(.horizontal)
-                            .padding(.vertical, 12)
-                            .lineLimit(1)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.gray, lineWidth: 1)
+                        ZStack {
+                            if selected {
+                                Capsule()
+                                    .foregroundStyle(selectionColor)
+                                    .matchedGeometryEffect(id: "picker", in: pickerTransition)
                                     .frame(height: 32)
-                            )
+                                
+                                content(item).id(item)
+                                    .foregroundStyle(.white)
+                                    .bold()
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 12)
+                                    .lineLimit(1)
+                                    .clipShape(Capsule())
+                                
+                            } else {
+                                Capsule()
+                                    .foregroundStyle(.clear)
+                                    .frame(height: 32)
+
+                                content(item).id(item)
+                                    .foregroundStyle(.black)
+                                    .bold()
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 12)
+                                    .lineLimit(1)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                            .frame(height: 32)
+                                    )
+                            }
+                        }
+                        .onTapGesture {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                selection = item
+                            }
+                        }
+                        .onSegmentedChange(selection: selection, proxy: proxy)
+                   }
+                    .onAppear {
+                        if selection == nil, let first = items.first {
+                            selection = first
+                        }
                     }
+                    
                 }
-                .onTapGesture {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        selection = item
-                    }
-                }
-                .onSegmentedChange(selection: selection, proxy: proxy)
-           }
-            .onAppear {
-                if selection == nil, let first = items.first {
-                    selection = first
-                }
+                .padding(.horizontal)
+                .fixedSize(horizontal: false, vertical: true)
             }
-            
         }
-        .padding(.horizontal)
-        .fixedSize(horizontal: false, vertical: true)
     }
     
 }
@@ -133,7 +123,3 @@ extension View {
         
     }
 }
-//
-//#Preview {
-//    SegmentedPicker()
-//}
