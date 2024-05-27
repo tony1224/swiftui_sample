@@ -20,6 +20,7 @@
 		FBAB3218292C6A84001C050A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAB3217292C6A84001C050A /* Preview Assets.xcassets */; };
 		FBAB321F292C6BA3001C050A /* mockImage.png in Resources */ = {isa = PBXBuildFile; fileRef = FBAB321E292C6BA3001C050A /* mockImage.png */; };
 		FBB23B7C2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB23B7B2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift */; };
+		FBCB10702BF446A200D572A4 /* SampleDragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB106F2BF446A200D572A4 /* SampleDragGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FBAB3217292C6A84001C050A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBAB321E292C6BA3001C050A /* mockImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mockImage.png; sourceTree = "<group>"; };
 		FBB23B7B2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerView.swift; sourceTree = "<group>"; };
+		FBCB106F2BF446A200D572A4 /* SampleDragGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDragGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				FBAB321E292C6BA3001C050A /* mockImage.png */,
 				FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */,
 				FBAB3211292C6A83001C050A /* ContentView.swift */,
+				FBCB106F2BF446A200D572A4 /* SampleDragGesture.swift */,
 				FBAB3213292C6A84001C050A /* Assets.xcassets */,
 				FBAB3215292C6A84001C050A /* SwiftUISample.entitlements */,
 				FBAB3216292C6A84001C050A /* Preview Content */,
@@ -181,6 +184,7 @@
 				FB89D5392BEBBFA80058A3A7 /* SegmentedPicker.swift in Sources */,
 				FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */,
 				FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */,
+				FBCB10702BF446A200D572A4 /* SampleDragGesture.swift in Sources */,
 				FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */,
 				FBB23B7C2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift in Sources */,
 				FB3232582ACFB50200B2E012 /* MarqueeText.swift in Sources */,
