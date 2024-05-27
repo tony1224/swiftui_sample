@@ -12,6 +12,7 @@
 		FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232552ACFB2AA00B2E012 /* RollingText.swift */; };
 		FB3232582ACFB50200B2E012 /* MarqueeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3232572ACFB50200B2E012 /* MarqueeText.swift */; };
 		FB3BB6912B0735220062E5C2 /* SympleTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */; };
+		FB8464512C04E0A000C293D2 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8464502C04E0A000C293D2 /* WeatherButton.swift */; };
 		FB89D5392BEBBFA80058A3A7 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89D5382BEBBFA80058A3A7 /* SegmentedPicker.swift */; };
 		FBA0F96829E593810006390C /* ShareNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0F96729E593810006390C /* ShareNotificationView.swift */; };
 		FBAB3210292C6A83001C050A /* SwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */; };
@@ -29,6 +30,7 @@
 		FB3232552ACFB2AA00B2E012 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 		FB3232572ACFB50200B2E012 /* MarqueeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeText.swift; sourceTree = "<group>"; };
 		FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SympleTabbarView.swift; sourceTree = "<group>"; };
+		FB8464502C04E0A000C293D2 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
 		FB89D5382BEBBFA80058A3A7 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		FBA0F96729E593810006390C /* ShareNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareNotificationView.swift; sourceTree = "<group>"; };
 		FBAB320C292C6A83001C050A /* SwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,17 +78,18 @@
 				FBAB321E292C6BA3001C050A /* mockImage.png */,
 				FBAB320F292C6A83001C050A /* SwiftUISampleApp.swift */,
 				FBAB3211292C6A83001C050A /* ContentView.swift */,
-				FBCB106F2BF446A200D572A4 /* SampleDragGesture.swift */,
 				FBAB3213292C6A84001C050A /* Assets.xcassets */,
 				FBAB3215292C6A84001C050A /* SwiftUISample.entitlements */,
 				FBAB3216292C6A84001C050A /* Preview Content */,
 				FBA0F96729E593810006390C /* ShareNotificationView.swift */,
+				FBCB106F2BF446A200D572A4 /* SampleDragGesture.swift */,
 				FB3232552ACFB2AA00B2E012 /* RollingText.swift */,
 				FB3232572ACFB50200B2E012 /* MarqueeText.swift */,
 				FB1F7EE52B03C62C00F4A63A /* PartlyCornerView.swift */,
 				FB1F7EE72B03C67100F4A63A /* PartlyRoundedCornerView.swift */,
 				FB3BB6902B0735220062E5C2 /* SympleTabbarView.swift */,
 				FBB23B7B2BEC8C2B00D8B1D4 /* SegmentedPickerView.swift */,
+				FB8464502C04E0A000C293D2 /* WeatherButton.swift */,
 			);
 			path = SwiftUISample;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				FB1F7EE82B03C67100F4A63A /* PartlyRoundedCornerView.swift in Sources */,
 				FBAB3212292C6A83001C050A /* ContentView.swift in Sources */,
+				FB8464512C04E0A000C293D2 /* WeatherButton.swift in Sources */,
 				FB3BB6912B0735220062E5C2 /* SympleTabbarView.swift in Sources */,
 				FB89D5392BEBBFA80058A3A7 /* SegmentedPicker.swift in Sources */,
 				FB3232562ACFB2AA00B2E012 /* RollingText.swift in Sources */,
